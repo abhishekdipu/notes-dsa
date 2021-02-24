@@ -1,7 +1,4 @@
-const data = {
-  name: "abhi",
-  age: 23,
-};
+const arr1 = [];
 
-console.log(data.name);
-console.log(data.school);
+const arr2 = [...arr1, 2];
+console.log(arr2);
