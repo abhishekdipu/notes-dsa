@@ -1,4 +1,17 @@
-const arr1 = [];
+function matchingStrings(strings, queries) {
+  let countArray = [];
+  for (let query of queries) {
+    let count = 0;
+    for (let string of strings) {
+      if (query === string) count++;
+      console.log({ query }, { string });
+    }
+    countArray.push(count);
+  }
 
-const arr2 = [...arr1, 2];
-console.log(arr2);
+  return countArray;
+}
+
+console.log(
+  matchingStrings(["aba", "baba", "aba", "xzxb"], ["aba", "xzxb", "ab"])
+);
