@@ -1,0 +1,1 @@
+- [links to visualize tries](https://www.cs.usfca.edu/~galles/visualization/Trie.html)
