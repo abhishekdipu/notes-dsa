@@ -1,6 +1,6 @@
 ## space Complexity :
 
-- space we need to allocate for our algo to give output.
+- space we need to allocate for our algorithm to give output.
 
 ```js
 const numbers = [];

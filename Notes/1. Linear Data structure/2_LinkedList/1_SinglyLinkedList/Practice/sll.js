@@ -14,8 +14,10 @@ class LinkedList {
   //INSERT
   insertFirst(data) {
     let node = new Node(data, this.head);
+    // let node = new Node(data, null); is valid for 1st time
     this.head = node;
     this.size++;
+    console.log(this.head);
   }
 
   insertLast(data) {
@@ -102,14 +104,14 @@ class LinkedList {
 
 const ll = new LinkedList();
 ll.insertFirst(10);
-ll.insertLast(20);
-ll.insertLast(30);
-ll.insertAt(25, 2);
+// ll.insertLast(20);
+// ll.insertLast(30);
+// ll.insertAt(25, 2);
 
-// ll.removeFirst();
-// ll.removeLast();
-ll.removeAt(2);
-ll.clearList();
+// // ll.removeFirst();
+// // ll.removeLast();
+// ll.removeAt(2);
+// ll.clearList();
 
 ll.printListData();
-ll.getSize();
+// ll.getSize();

@@ -1,7 +1,24 @@
-const nums = [1, 2, 3, 4];
+//------------------------------------------------------------------------------------
+const rotateLeft = (n, arr) => {
+  for (let i = 0; i < n; i++) {
+    const shiftedElement = arr.shift();
+    arr.push(shiftedElement);
+  }
+  return arr;
+};
+console.log(rotateLeft(2, [1, 2, 3, 4, 5])); //[ 3, 4, 5, 1, 2 ]
 
-// console.log(nums.shift());
-// console.log(nums);
+//------------------------------------------------------------------------------------
+const rotateRight = (n, arr) => {
+  for (let i = 0; i < n; i++) {
+    const poppedElement = arr.pop();
+    arr.unshift(poppedElement);
+  }
+  return arr;
+};
+console.log(rotateRight(2, [1, 2, 3, 4, 5])); //[ 4, 5, 1, 2, 3 ]
+
+//------------------------------------------------------------------------------------
 
 //d : how much to rotate; arr : array
 function rotateLeft(d, arr) {
@@ -17,4 +34,4 @@ function rotateLeft(d, arr) {
   return arr;
 }
 
-console.log(rotateLeft(2, [1, 2, 3, 4, 5]));
+console.log(rotateLeft(2, [1, 2, 3, 4, 5])); //[ 3, 4, 5, 1, 2 ]

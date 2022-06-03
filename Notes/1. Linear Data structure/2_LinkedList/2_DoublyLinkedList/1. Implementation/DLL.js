@@ -57,40 +57,37 @@ class DoublyLinkedList {
   /**********************************************************************************/
 
   insertAt(data, index) {
-    //if index is out of range
-    if (index > 0 && index > this.size) {
-      return;
+    if (index < 0 || index > this.size) throw new Error("out of bound");
+    const node = new Node(data);
+
+    if (index == 0) {
+      //insertFirst
+      let temp = this.head;
+      this.head = node;
+      node.next = temp;
+      temp.prev = node;
+    } else if (index === this.size) {
+      //insertLast
+      let temp = this.tail;
+      this.tail = node;
+      node.prev = temp;
+      temp.next = node;
+    } else {
+      let count = 0;
+      let current = this.head;
+      let previous = null;
+
+      while (count < index) {
+        previous = current;
+        current = current.next;
+        count++;
+      }
+
+      previous.next = node;
+      node.next = current;
+      current.prev = node;
+      node.prev = previous;
     }
-
-    //if first index
-    if (index === 0) {
-      this.insertFirst(data);
-      return;
-    }
-
-    //insert node at passed index
-    /* 100, 200, 300, 400 ; and we want to insert 250 at index 2
-    - so target is to make room 250
-    - head holds all the nodes
-    - 1. make a var 'previous' to hold the node 200, 300, 400
-    - 2. make another var 'current' to hold node 300, 400
-    - 3. now put previous.next = node and node.next = current
-    */
-    const node = new Node(data); //{data:250, next:null}
-    let current, previous;
-
-    //set current to first
-    current = this.head;
-    let count = 0;
-    while (count < index) {
-      previous = current; //node before index
-      current = current.next; //Node after the index
-      count++;
-    }
-
-    node.next = current;
-    node.prev = previous;
-    previous.next = node; //For DLL
     this.size++;
   }
 
@@ -116,60 +113,59 @@ class DoublyLinkedList {
   /**********************************************************************************/
 
   removeFirst() {
-    if (this.size === 0) {
-      return;
+    if (!this.head) return null;
+    if (this.size === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.head = this.head.next;
+      this.head.prev = null;
     }
-    this.head = this.head.next;
-    this.head.prev = null; //DLL
     this.size--;
   }
-
   /**********************************************************************************/
   //Remove Last (else block is changed)
   /**********************************************************************************/
 
   removeLast() {
-    if (this.size === 0) {
-      return;
-    }
+    if (!this.head) return null;
     if (this.size === 1) {
-      this.removeFirst();
+      this.head = null;
+      this.tail = null;
     } else {
       this.tail = this.tail.prev;
       this.tail.next = null;
-      this.size--;
     }
+    this.size--;
   }
 
   /**********************************************************************************/
   //Remove at index
   /**********************************************************************************/
+
   removeAt(index) {
-    if (index < 0 || index >= this.size) {
-      return;
-    }
+    if (index < 0 || index >= this.size) return null;
     if (index === 0) {
       this.removeFirst();
+      return;
     } else if (index === this.size - 1) {
       this.removeLast();
-    } else {
-      /**
-       * 100,200,300,400,500 (want to remove 300 at index 2)
-       * - let prev = 200,300,400,500
-       * curr = 300,400,500
-       */
-      let current = this.head;
-      let previous;
-      let count = 0;
-      while (count < index) {
-        previous = current;
-        current = current.next;
-        count++;
-      }
-      previous.next = current.next;
-      current.prev = previous; //DLL
-      this.size--;
+      return;
     }
+
+    let current = this.head;
+    let count = 0;
+    let previous = null;
+
+    while (count < index) {
+      previous = current;
+      current = current.next;
+      count++;
+    }
+
+    previous.next = current.next;
+    current.next.prev = previous;
+    this.size--;
   }
 
   /**********************************************************************************/
@@ -178,6 +174,7 @@ class DoublyLinkedList {
 
   clearList() {
     this.head = null;
+    this.tail = null;
     this.size = 0;
   }
 
@@ -194,31 +191,31 @@ class DoublyLinkedList {
 
   printListData() {
     let current = this.head;
-
     while (current) {
       console.log(current.data);
       current = current.next;
+    }
+  }
+
+  printListDataFromTail() {
+    let current = this.tail;
+    while (current) {
+      console.log(current.data);
+      current = current.prev;
     }
   }
 }
 
 let dll = new DoublyLinkedList();
 
-dll.insertLast(10);
-// dll.insertFirst(5);
+dll.insertFirst(10);
 dll.insertLast(20);
 dll.insertLast(30);
 dll.insertLast(40);
-// dll.insertAt(15, 2);
 dll.insertLast(50);
 
-// console.log(dll.getAt(2));
+dll.removeFirst();
 
-// dll.removeFirst();
-// dll.removeLast();
-// dll.printSize();
-// dll.removeLast();
-// dll.printSize();
-dll.removeAt(1);
 dll.printListData();
-console.log(dll);
+console.log("----------------------------");
+dll.printListDataFromTail();

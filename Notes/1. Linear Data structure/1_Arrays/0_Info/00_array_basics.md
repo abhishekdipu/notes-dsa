@@ -1,6 +1,6 @@
 ## Arrays :
 
-- In memory arrays get stores in secquence
+- In memory arrays get stores in sequence
 
 1. lookup: O(1)
 2. insert : O(n)

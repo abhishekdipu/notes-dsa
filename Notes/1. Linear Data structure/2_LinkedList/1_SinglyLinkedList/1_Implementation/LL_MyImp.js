@@ -1,17 +1,3 @@
-/*
-  //Insert 1st node
-  //Insert last node
-  //Insert at index
-
-  //Get at index
-
-  //Remove at index
-  //clear the list
-
-  //print list data
-
-  //indexOf
-*/
 class Node {
   constructor(data, next = null) {
     this.data = data;
@@ -32,7 +18,8 @@ class LinkedList {
   /**********************************************************************************/
 
   insertFirst(data) {
-    this.head = new Node(data, this.head);
+    const node = new Node(data, this.head); // all the existing node are present in "this.head". so put "this.head" in next
+    this.head = node;
     this.size++;
   }
 
@@ -79,8 +66,8 @@ class LinkedList {
     }
 
     //insert node at passed index
-    /* 100, 200, 300, 400 ; and we want to insert 250 at index 2
-    - so target is to make room 250
+    /* 100, 200, 300, 400 ; and we want to insert 250 at index 2 (between 200 and 300)
+    - so target is to make room for 250
     - head holds all the nodes
     - 1. make a var 'previous' to hold the node 200, 300, 400
     - 2. make another var 'current' to hold node 300, 400
@@ -99,7 +86,6 @@ class LinkedList {
     }
 
     node.next = current;
-
     previous.next = node;
     this.size++;
   }
@@ -228,25 +214,57 @@ class LinkedList {
   }
 
   //remove duplicate element
+  // removeDuplicate() {
+  //   let current, previous;
+  //   let memo = {};
+  //   current = this.head;
+  //   memo[current.data] = 1;
+
+  //   while (current.next) {
+  //     previous = current;
+  //     current = current.next;
+
+  //     if (current.data in memo) {
+  //       previous.next = current.next;
+  //     } else {
+  //       memo[current.data] = 1;
+  //       // console.log(memo);
+  //       current = previous.next;
+  //     }
+  //   }
+  // }
+
   removeDuplicate() {
-    let current, previous;
-    let memo = {};
-    current = this.head;
-    memo[current.data] = 1;
+    let current = this.head;
+    let previous = null;
+    let memo = [];
 
-    while (current.next) {
-      previous = current;
-      current = current.next;
-
-      if (current.data in memo) {
-        previous.next = current.next;
+    while (current) {
+      if (!memo.includes(current.data)) {
+        memo.push(current.data);
+        previous = current;
       } else {
-        memo[current.data] = 1;
-        // console.log(memo);
-        current = previous.next;
+        previous.next = current.next;
       }
+      current = current.next;
     }
   }
+  removeDuplicate2 = () => {
+    const memo = [];
+    let current = this.head;
+    let previousNode = null;
+
+    while (current) {
+      if (!memo.includes(current.data)) {
+        memo.push(current.data);
+        previousNode = current;
+        current = current.next;
+      } else {
+        previousNode.next = current.next;
+        current = current.next;
+      }
+    }
+  };
 
   toArray() {
     let arr = [];
@@ -312,8 +330,10 @@ ll.insertLast(100);
 ll.insertLast(200);
 ll.insertLast(300);
 ll.insertLast(400);
+ll.insertLast(400);
 ll.insertLast(500);
 // ll.insertLast(100);
-ll.printListData();
+// ll.printListData();
 console.log("---------------");
-ll.getKthFromEnd2(6);
+ll.removeDuplicate();
+ll.printListData();
