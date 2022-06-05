@@ -4,7 +4,7 @@ function matchingStrings(strings, queries) {
     let count = 0;
     for (let string of strings) {
       if (query === string) count++;
-      console.log({ query }, { string });
+      console.log({query}, {string});
     }
     countArray.push(count);
   }

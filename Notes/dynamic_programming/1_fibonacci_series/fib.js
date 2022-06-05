@@ -1,6 +1,6 @@
 /*
 fib -> 1,1,2,3,5,8...
-Q. get nth fibo no.
+Q. get nth fibonacci no.
 */
 
 //without memoization
