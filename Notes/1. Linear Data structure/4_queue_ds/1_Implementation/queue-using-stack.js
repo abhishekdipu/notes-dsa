@@ -1,5 +1,4 @@
-// const Stack = require("../../3_stack_ds/1_Implementation/stack");
-import { Stack } from "../../3_stack_ds/1_Implementation/stack.js";
+import {Stack} from "../../3_stack_ds/1_Implementation/stack.js";
 
 class QueueWithTwoStacks {
   // let stack1 = new Stack();

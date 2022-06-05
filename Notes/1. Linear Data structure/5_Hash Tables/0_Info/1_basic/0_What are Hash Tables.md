@@ -2,11 +2,11 @@
 
 - Hash Tables gives quick lookup benefit.
 
-## Real life uses of hashtable
+## Real life uses of hashTable
 
 1. Spell checkers : to check/suggest word starting for some characters.
 2. Dictionaries : to check for that word
-3. Compilers : to lookup address of functions and varibale
+3. Compilers : to lookup address of functions and variable
 
 ## Hash-Table implementation in diff languages
 

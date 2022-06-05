@@ -1,7 +1,7 @@
 # how hashing works?
 
 - In JS, Object is implementation of hashTable.
-- where values can be access superfast using the key.
+- where values can be access super fast using the key.
 
 ## N/B:
 
@@ -17,7 +17,7 @@
 let person = {
   name: "abhi",
   age: 23,
-  dept: "engg",
+  dept: "engineering",
 };
 ```
 
@@ -47,12 +47,12 @@ const hashFun = (num) => {
 
 ## 2. Open addressing
 
-- here we don't store value in LL, we directly store values in Array cells/slots.
+- here we don't store value in LinkedList, we directly store values in Array cells/slots.
 
 ## 2.1 Linear Probing
 
 - Probing means searching
-- In "Linear Probing" if slot for our hashed index is full then we search for next avaible slot linearly(by incrmenting i by 1) and put value there.
+- In "Linear Probing" if slot for our hashed index is full then we search for next available slot linearly(by incrementing i by 1 and put value there.
 - Linear Probing formula : hash(key) + i
 - and if all further slots are full then value can't be stored in hash table, it is limitation of Linear Probing.
 - all filled slots are called "cluster"
@@ -60,9 +60,9 @@ const hashFun = (num) => {
 ## 2.2 Quadratic Probing
 
 - Quadratic Probing solve Linear probing cluster problem.
-- here if slot for our hashed index is full then we search for next avaible slot Quadratically (by incrmenting i by i^2) and put value there.
-- Quadratic Probing formula : (hash(key) + i)^2
-- Problem with Quadratic Probing : it increase search for empty slot quadratically and we'll reach end of hash table sooner and start over again cyclc and many keep of looking at same place and this may result into infinite loop
+- here if slot for our hashed index is full then we search for next available slot Quadratically (by incrementing i by i^2) and put value there.
+- Quadratic Probing formula : (hash(key) + i^2
+- Problem with Quadratic Probing : it increase search for empty slot quadratically and we'll reach end of hash table sooner and start over again cyclic and may keep of looking at same place and this may result into infinite loop
 
 ## 2.3 Double Hashing
 

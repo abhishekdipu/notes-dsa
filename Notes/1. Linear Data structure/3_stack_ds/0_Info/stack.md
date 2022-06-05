@@ -6,7 +6,7 @@
 ## where stack can used in real-life?
 
 1. Implement the undo feature
-2. Build compiler(eg. syntax hecking)
+2. Build compiler(eg. syntax checking)
 3. Evaluate expression (eg. 1+2\*3)
 4. Build navigation (eg. forward/backward in browser)
 

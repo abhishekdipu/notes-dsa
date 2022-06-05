@@ -1,5 +1,5 @@
 //unsolved
-const isBalanaced = (str) => {
+const isBalanced = (str) => {
   let strArr = str.split("");
   let stack = [];
   let leftBrackets = ["(", "[", "{", "<"];
@@ -29,8 +29,8 @@ const isBalanaced = (str) => {
   return stack.length === 0;
 };
 
-console.log(isBalanaced("({1 + 2)}}}"));
-// console.log(isBalanaced("(1) + (2) "));
-// console.log(isBalanaced("((1) + (2))"));
-// console.log(isBalanaced("(1 + 2 "));
-// console.log(isBalanaced(")1 + 2( "));
+console.log(isBalanced("({1 + 2)}}}"));
+// console.log(isBalanced("(1) + (2) "));
+// console.log(isBalanced("((1) + (2))"));
+// console.log(isBalanced("(1 + 2 "));
+// console.log(isBalanced(")1 + 2( "));

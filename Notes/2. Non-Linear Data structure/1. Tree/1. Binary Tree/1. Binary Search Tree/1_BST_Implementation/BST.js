@@ -11,7 +11,7 @@ class Tree {
     this.root = null;
   }
 
-  //using itteration
+  //using iteration
   insert1(data) {
     const node = new Node(data);
     if (this.root == null) {
@@ -36,7 +36,7 @@ class Tree {
     }
   }
 
-  //using recurssion
+  //using recursion
   insert(data) {
     const insertHelper = (data, root) => {
       if (root == null) {

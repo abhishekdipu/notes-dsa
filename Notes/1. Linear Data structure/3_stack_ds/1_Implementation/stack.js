@@ -3,24 +3,27 @@ export class Stack {
     this.items = [];
     this.count = 0;
   }
+
   //push : add element to the top(at last index)
   push(element) {
     //this.items.push(element);
     this.items[this.count] = element;
     this.count++;
   }
-  //pop : remove elemnt from top(from last index)
+
+  //pop : remove element from top(from last index)
   pop() {
     if (this.count == 0) return undefined;
-    const popedIteam = this.items[this.count - 1];
+    const poppedItem = this.items[this.count - 1];
     this.count--;
-    return popedIteam;
+    return poppedItem;
   }
 
   //peek : top element to stack
   peek() {
     return this.items[this.count - 1];
   }
+
   //isEmpty : to check if stack is empty
   isEmpty() {
     return this.count == 0;
@@ -32,7 +35,7 @@ export class Stack {
     this.count == 0;
   }
 
-  //print: get all iteams
+  //print: get all items
   print() {
     let str = "";
     for (let i = 0; i < this.count; i++) {
@@ -40,6 +43,7 @@ export class Stack {
     }
     return str;
   }
+
   //size : get no of element present
   size() {
     return this.count;
