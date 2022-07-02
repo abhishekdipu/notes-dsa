@@ -1,6 +1,6 @@
-# Data Structure and algorith notes
+# Data Structure and algorithm notes
 
-[Author](https://www.abhishekdipu.tech/)
+[Author](https://www.abhishekdipu.in/)
 
 ## Table of content
 
