@@ -1,6 +1,6 @@
 # Traversing Trees
 
-- In Linear data-structure(Array/Lincked-List) we have only 1 way to traverse.
+- In Linear data-structure(Array/Linked-List) we have only 1 way to traverse.
 - But in case of trees we have many to traverse
 
 # Traversing BST :
@@ -15,4 +15,4 @@
 
 ## Implementation of Tree Traversal algorithm:
 
-- Tree Traversal can beimplemented using recurssion.
+- Tree Traversal can be implemented using recursion.

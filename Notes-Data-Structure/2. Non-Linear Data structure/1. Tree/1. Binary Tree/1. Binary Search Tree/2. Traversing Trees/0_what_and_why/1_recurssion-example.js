@@ -1,4 +1,4 @@
-/* # Recurssion
+/* # Recursion
 
 - Eg. Factorial for a number
 */
@@ -13,9 +13,9 @@ const factorialLoop = (n) => {
 };
 console.log(factorialLoop(4)); //24
 
-// using Recurssion
-const factorialRecurssion = (n) => {
+// using Recursion
+const factorialRecursion = (n) => {
   if (n == 1) return n;
-  return n * factorialRecurssion(n - 1);
+  return n * factorialRecursion(n - 1);
 };
-console.log(factorialRecurssion(4)); //24
+console.log(factorialRecursion(4)); //24
