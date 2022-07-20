@@ -1,4 +1,4 @@
-import { Tree } from "./Tree.js";
+import {Tree} from "./Tree.js";
 
 class MinMaxNode extends Tree {
   //Minimum Node for any binary tree
@@ -25,7 +25,7 @@ class MinMaxNode extends Tree {
 
   //Minimum Node for any binary search tree
   //we have to find the left most node
-  //TC : O(log n) {bcz we are narrowing down the search by half in each itteration}
+  //TC : O(log n) {bcz we are narrowing down the search by half in each iteration}
   minBst(root) {
     if (root == null) return undefined;
     let current = root;
@@ -39,7 +39,7 @@ class MinMaxNode extends Tree {
 
   //Maximum Node for any binary search tree
   //we have to find the right most node
-  //TC : O(log n) {bcz we are narrowing down the search by half in each itteration}
+  //TC : O(log n) {bcz we are narrowing down the search by half in each iteration}
   maxBst(root) {
     if (root == null) return undefined;
     let current = root;
@@ -56,7 +56,7 @@ let bst = new MinMaxNode();
 bst.insert(7);
 bst.insert(4);
 bst.insert(9);
-// bst.insert(1);
+bst.insert(1);
 bst.insert(6);
 bst.insert(8);
 bst.insert(10);

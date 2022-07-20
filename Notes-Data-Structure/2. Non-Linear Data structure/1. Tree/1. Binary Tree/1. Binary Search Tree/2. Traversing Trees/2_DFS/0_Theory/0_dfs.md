@@ -14,7 +14,7 @@
 - order of traversal : Left, Root, Right
 - O/P of In-order is in sorted order
   - Left, Root, Right : ascending order
-  - Root,Left, Right : decending order
+  - Right, Root, Left : descending order
 
 ## Post-order
 

@@ -12,42 +12,17 @@ export class Tree {
   }
 
   insert(data) {
-    const node = new Node(data);
-    if (this.root == null) {
-      this.root = node;
-      return;
-    }
-    let current = this.root;
-    while (true) {
-      if (data < current.data) {
-        if (current.leftChild == null) {
-          current.leftChild = node;
-          break;
-        }
-        current = current.leftChild;
-      } else {
-        if (current.rightChild == null) {
-          current.rightChild = node;
-          break;
-        }
-        current = current.rightChild;
+    const insertHelper = (data, root) => {
+      if (root == null) {
+        root = new Node(data);
+      } else if (data < root.data) {
+        root.leftChild = insertHelper(data, root.leftChild);
+      } else if (data > root.data) {
+        root.rightChild = insertHelper(data, root.rightChild);
       }
-    }
-  }
+      return root;
+    };
 
-  //check if node is present
-  find(data) {
-    if (this.root == null) return false;
-
-    let current = this.root;
-
-    while (current != null) {
-      if (data < current.data) {
-        current = current.leftChild;
-      } else if (data > current.data) {
-        current = current.rightChild;
-      } else return true;
-    }
-    return false;
+    this.root = insertHelper(data, this.root);
   }
 }

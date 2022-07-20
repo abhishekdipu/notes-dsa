@@ -1,4 +1,4 @@
-import { Tree } from "./Tree.js";
+import {Tree} from "./Tree.js";
 
 class IsBST extends Tree {
   //Traversal : preOrder
@@ -30,7 +30,9 @@ bst.insert(6);
 bst.insert(8);
 bst.insert(10);
 
+console.log("-------------for bst--------------");
 console.log(bst.isBST(bst.root));
 
+console.log("-------------for non-bst--------------");
 bst.swapRoot(bst.root);
 console.log(bst.isBST(bst.root));

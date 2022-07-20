@@ -1,4 +1,4 @@
-import { Tree } from "./Tree.js";
+import {Tree} from "./Tree.js";
 
 class BSTExercise extends Tree {
   //Traversal :
@@ -11,20 +11,20 @@ class BSTExercise extends Tree {
     this.printNodesAtDistance(root.rightChild, distance - 1);
   }
 
-  // getNodesAtDistance(root, distance) {
-  //   let arr = [];
-  //   this.nodesAtDistance(root, distance, arr);
-  // }
-  // nodesAtDistance(root, distance, arr = []) {
-  //   if (root == null) return;
-  //   if (distance == 0) {
-  //     arr.push(root.data);
-  //     return arr;
-  //   }
+  //to getNodesAtDistanceInArray
+  getNodesAtDistanceInArray(root, distance) {
+    let arr = [];
+    const getNodesAtDistance = (root, distance) => {
+      if (root == null) return;
+      if (distance == 0) return arr.push(root.data);
 
-  //   this.nodesAtDistance(root.leftChild, distance - 1, arr);
-  //   this.nodesAtDistance(root.rightChild, distance - 1, arr);
-  // }
+      getNodesAtDistance(root.leftChild, distance - 1);
+      getNodesAtDistance(root.rightChild, distance - 1);
+    };
+
+    getNodesAtDistance(root, distance);
+    return arr;
+  }
 }
 
 let bst = new BSTExercise();
@@ -36,6 +36,7 @@ bst.insert(6);
 bst.insert(8);
 bst.insert(10);
 
-bst.printNodesAtDistance(bst.root, 2);
+// bst.printNodesAtDistance(bst.root, 2);
 
-// console.log(bst.nodesAtDistance(bst.root, 1));
+const ans = bst.getNodesAtDistanceInArray(bst.root, 2);
+console.log(ans);

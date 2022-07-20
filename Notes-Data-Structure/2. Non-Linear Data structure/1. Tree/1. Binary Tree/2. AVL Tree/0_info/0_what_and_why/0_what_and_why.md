@@ -17,18 +17,18 @@
 ### 4.1 Right skewed tree
 
 - it is type of Un-Balanced tree
-- it has only rigth child
+- it has only right child
 
 ### 4.2 Left skewed tree
 
 - it is type of Un-Balanced tree
 - it has only left child
 
-# How any tree become scewed?
+# How any tree become skewed?
 
-- if we insert elements is sorted order then tree become scewed.
-- if order of insersion is ascending then tree will become right-scewed
-- if order of insersion is decending then tree will become left-scewed
+- if we insert elements is sorted order then tree become skewed.
+- if order of insertion is ascending then tree will become right-skewed
+- if order of insertion is descending then tree will become left-skewed
 
 ## N/B :
 
