@@ -6,7 +6,7 @@
 
 ## Approach 1 : for each node check all nodes meet BST condition.
 
-- Time complexity : O(n^2)
+- Time complexity : O(n^2) => not good approach
 
 ## Approach 2 : Define Range for each node and check if node value in between that range.
 

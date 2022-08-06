@@ -14,6 +14,6 @@
 
 ## Min/Max Node in Binary Search Tree
 
-- - Approach for min: we have to find the left most node
-- - Approach for max: we have to find the right most node
+- Approach for min: we have to find the left most node
+- Approach for max: we have to find the right most node
 - Time Complexity : O(log n) {bcz we are narrowing down the search by half in each iteration}
