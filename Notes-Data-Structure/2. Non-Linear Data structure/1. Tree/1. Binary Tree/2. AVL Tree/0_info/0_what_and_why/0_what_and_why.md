@@ -32,8 +32,8 @@
 
 ## N/B :
 
-- Left/right scewed trees are like linked list where 1 node holds the reference of next node.
-- and here time complexity of traveral is O(n).
+- Left/right skewed trees are like linked list where 1 node holds the reference of next node.
+- and here time complexity of traversal is O(n).
 - time complexity of any tree algo will increase if tree is not balanced.
 
 ## How to balance a tree?
