@@ -30,6 +30,7 @@ class AVLTree {
   }
 
   //helper methods
+  // for null checking for node
   height(node) {
     return node == null ? -1 : node.height;
   }
