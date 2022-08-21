@@ -30,15 +30,29 @@ class AVLTree {
   }
 
   //helper methods
+  //------------------------------------------------------------------------------------------------
+  //----------------Height Calculation-------------------
+  //------------------------------------------------------------------------------------------------
   // for null checking for node
   height(node) {
     return node == null ? -1 : node.height;
   }
+  setHeight(node) {
+    node.height =
+      Math.max(this.height(node.leftChild), this.height(node.rightChild)) + 1;
+  }
+  //------------------------------------------------------------------------------------------------
+  //----------------Balance Factor-----------------------
+  //------------------------------------------------------------------------------------------------
   balanceFactor(node) {
     return node == null
       ? 0
       : this.height(node.leftChild) - this.height(node.rightChild);
   }
+
+  //------------------------------------------------------------------------------------------------
+  //----------------Detecting Rotations------------------
+  //------------------------------------------------------------------------------------------------
   isLeftHeavy(node) {
     return this.balanceFactor(node) > 1;
   }
@@ -46,19 +60,9 @@ class AVLTree {
     return this.balanceFactor(node) < -1;
   }
 
-  balance(root) {
-    if (this.isLeftHeavy(root)) {
-      if (this.balanceFactor(root.rightChild) < 0)
-        root.leftChild = this.rotateLeft(root.leftChild);
-      return this.rotateRight(root);
-    } else if (this.isRightHeavy(root)) {
-      if (this.balanceFactor(root.rightChild) > 0)
-        root.rightChild = this.rotateRight(root.leftChild);
-      return this.rotateLeft(root);
-    }
-    return root;
-  }
-
+  //------------------------------------------------------------------------------------------------
+  //-------------------------Implementing Rotations-------------------
+  //------------------------------------------------------------------------------------------------
   rotateLeft(root) {
     let newRoot = root.rightChild;
 
@@ -85,9 +89,17 @@ class AVLTree {
     return newRoot;
   }
 
-  setHeight(node) {
-    node.height =
-      Math.max(this.height(node.leftChild), this.height(node.rightChild)) + 1;
+  balance(root) {
+    if (this.isLeftHeavy(root)) {
+      if (this.balanceFactor(root.leftChild) < 0)
+        root.leftChild = this.rotateLeft(root.leftChild);
+      return this.rotateRight(root);
+    } else if (this.isRightHeavy(root)) {
+      if (this.balanceFactor(root.rightChild) > 0)
+        root.rightChild = this.rotateRight(root.leftChild);
+      return this.rotateLeft(root);
+    }
+    return root;
   }
 
   print() {
@@ -104,8 +116,7 @@ let avl = new AVLTree();
 // avl.insert(8);
 // avl.insert(10);
 
-avl.insert(10);
 avl.insert(20);
-avl.insert(30);
-
+avl.insert(10);
+avl.insert(15);
 avl.print();
