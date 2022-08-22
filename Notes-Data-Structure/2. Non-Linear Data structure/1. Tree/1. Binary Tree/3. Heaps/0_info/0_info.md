@@ -8,13 +8,13 @@
 
 ### 1. COMPLETE
 
-- It should be COMPLETE tree : means All levels are filled except protentially last level. And level are filled from left to the right.
+- It should be COMPLETE tree : means All levels are filled except potentially last level. And level are filled from left to the right.
 
 ### 2. HEAP PROPERTY
 
 - The Value of each node should be greater than or equal to it's children
 
-## Defination :
+## Definition :
 
 - Heap is complete Binary tree which satisfy heap property.
 - NB: More accurately it's called binary heap
@@ -33,9 +33,9 @@
 
 ## Heaps Application
 
-1. Soting (HeapSort): used for shoring data
-2. Graph alogorithms (shortest path): Use to find shortest path between 2 nodes in graph. (used in GPS)
-3. Priority Queues : used to implemenet Priority Queues
+1. Sorting (HeapSort): used for shoring data
+2. Graph algorithms (shortest path): Use to find shortest path between 2 nodes in graph. (used in GPS)
+3. Priority Queues : used to implement Priority Queues
 4. Finding the Kth smallest/largest value
 
 ## Population the Heap
@@ -56,5 +56,5 @@
 
 # Implementing a Heap
 
-- We usually use array to implement a heap even though heap is conceptualy a binary tree.
+- We usually use array to implement a heap even though heap is conceptually a binary tree.
 - as heaps are complete binary tree so we don't have holes in them, so it's more efficient to implement them using array, we don't need Node class with fields for rightChild and rightChild. so it'll have smaller foot print in the memory.

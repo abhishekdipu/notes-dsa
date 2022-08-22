@@ -1,5 +1,5 @@
 export class Heap {
-  //private varibales to store items and size
+  //private variables to store items and size
   items = [];
   size = 0;
 
