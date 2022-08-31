@@ -16,7 +16,7 @@
 ![](./screenshots/dense_graph.png)
 
 - where each node is connected with all other nodes
-- Space complexity : O(V^2)
+- Adjacency List Space-complexity in case of dense graph: O(V^2)
 
 ## Time complexity of various operations :
 
