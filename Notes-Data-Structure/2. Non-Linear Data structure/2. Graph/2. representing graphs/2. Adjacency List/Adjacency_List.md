@@ -54,8 +54,8 @@
 
 ### 4. Removing an Edge : O(V)
 
-- connect bob(index-2) to john(index-0)
-  ![](./screenshots/removing_edge.png)
+![](./screenshots/removing_edge.png)
+
 - same as adding an edge, we need to find index for node then iterate over it's Linked-List
 - TC : O(K) if k edge(connection) is there
 - TC : O(V) in worst case

@@ -10,12 +10,12 @@
 
 ## Operation on Adjacency Matrix and their time complexity:
 
-### 1. Add a node(vertex) : O(v^2)
+### 1. Add a node(vertex) : O(V^2)
 
 ![](<./screenshots/adding_a_node(vertex).png>)
 
 - Eg. : we want to add sam
-- we need to create an new matrix with extra raw and column and copy all the existing records into that.
+- we need to create an new matrix with extra raw and column and copy all the existing records into that. which will take TC : O(V^2)
 
 - time complexity : O(v^2) : as existing matrix had v^2 entries.
   v : number of vertices
