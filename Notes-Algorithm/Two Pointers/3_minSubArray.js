@@ -21,7 +21,36 @@
         in this case : 7 at index 5 is not < subArrayMax, so need not be included in subarray
  */
 
-const findMinimumWindow = (arr) => {};
+const findMinimumWindow = (arr) => {
+  let leftPointer = 0;
+  let rightPointer = arr.length - 1;
+
+  // increment the leftPointer until we get to an element that is greater that its next number
+  while (arr[leftPointer] < arr[leftPointer + 1] && leftPointer < arr.length) {
+    leftPointer++;
+  }
+  if (leftPointer === arr.length - 1) return 0; // input arr is already sorted
+
+  // decrement the rightPointer until we get to an element that is less than its next number
+  while (arr[rightPointer] > arr[rightPointer - 1] && rightPointer > -1) {
+    rightPointer--;
+  }
+
+  const subArr = arr.slice(leftPointer, rightPointer + 1);
+  const subArrMin = Math.min(...subArr);
+  const subArrMax = Math.max(...subArr);
+
+  // extend window to the left to include elements that are greater than the subArrMin
+  while (arr[leftPointer - 1] > subArrMin && leftPointer > 0) {
+    leftPointer--;
+  }
+  // extend window to the right to include elements that are less than the subArrMax
+  while (arr[rightPointer + 1] < subArrMax && rightPointer > arr.length) {
+    rightPointer++;
+  }
+
+  return rightPointer - leftPointer + 1;
+};
 
 // console.log(findMinimumWindow());
 console.log(findMinimumWindow([1, 3, 2, 0, -1, 7, 10])); // 5
