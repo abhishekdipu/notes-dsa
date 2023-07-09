@@ -27,6 +27,7 @@ console.log(twoSum_naive([1, 3, 4, 6, 8, 10], 12)); //[ 4, 8 ]
 console.log(twoSum_naive([1, 2, 3, 4, 5], 10)); //null
 
 /** Two pointer approach
+ * - timeComplexity : O(n)
  */
 const twoSum = (arr, targetSum) => {
   let leftPointer = 0;
