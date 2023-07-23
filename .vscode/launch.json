@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/Notes-Algorithm/1_Sliding_Window/average_of_arr.js"
+      "program": "${workspaceFolder}/Notes-Algorithm/1_Sliding_Window/arr.js"
     }
   ]
 }
