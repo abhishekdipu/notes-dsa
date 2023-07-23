@@ -6,8 +6,8 @@
 
 
 - Solution approach using two pointers :
-1. Sort the array
-2.Loop over the array
+1. Array is unsorted so 1st Sort the array
+2. Loop over the array
     a. Take the negative of the array[i] as a targetSum 
         (eg. if arr[i] = 1 then targetSum = -1, if  if arr[i] = -1 then targetSum = 1)
     b. Look for the pair of numbers that add to the targetSum using two pointers as usual
@@ -47,7 +47,7 @@ const twoSum = (arr, targetSum, leftPointer, triplets) => {
         leftPointer++;
       }
       //move the right pointer down until we get an integer that is different
-      if (leftPointer < rightPointer && arr[rightPointer] === arr[rightPointer - 1]) {
+      if (leftPointer < rightPointer && arr[rightPointer] === arr[rightPointer + 1]) {
         rightPointer--;
       }
     } else if (targetSum > currentSum) {
