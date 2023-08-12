@@ -4,6 +4,10 @@
 - Often these subarrays overlap, which allows us to optimize our algorithm and not recompute the overlapping sections.
 - We can use a sliding window to discern what might be overlapping between subarrays vs what is a new element to be computed.
 
+## How to identify if given problem can be solved using Sliding Window ?
+
+- there would array or linked list and will be asked to do something in **contiguous** (i.e continues) sub array.
+
 ## Some popular problems are :
 
 - Given an array, find the average of all contiguous subarrays of size "K"
