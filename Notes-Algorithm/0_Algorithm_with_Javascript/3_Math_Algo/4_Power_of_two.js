@@ -20,6 +20,7 @@ If remainder is not O in any step, 'n' is not a power of two
 If remainder is 0 and 'n' comes down to 1 eventually, n is a power of two.
 */
 
+// big-O : O(log(n)) in each iteration input in getting half
 const isPowerOfTwo = (n) => {
   if (n < 1) return false;
 
