@@ -1,6 +1,10 @@
-// console.log(Number.MIN_VALUE);
-// console.log(Number.MAX_VALUE);
-// console.log(Infinity);
+const person = {
+  name: "abhi",
+  age: 20,
+};
 
-let name = "ABHI";
-console.log(typeof name[0]);
+// person.name = undefined;
+// delete person.name;
+console.log(person);
+
+console.log(Object.entries(person));
