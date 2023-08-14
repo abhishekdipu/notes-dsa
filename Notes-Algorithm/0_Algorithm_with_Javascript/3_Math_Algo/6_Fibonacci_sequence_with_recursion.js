@@ -13,8 +13,7 @@ sample output :
 */
 
 const recursiveFibonacci = (n) => {
-  if (n === 0) return 0;
-  if (n === 1) return 1;
+  if (n < 2) return n;
   return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
 };
 
