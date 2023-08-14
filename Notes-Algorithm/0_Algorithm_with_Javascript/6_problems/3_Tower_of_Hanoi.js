@@ -6,6 +6,7 @@ The objective of the puzzle is to move the entire stack to the last rod, obeying
     3. No disk may be placed on top of a disk that is smaller.
  */
 
+// Big-O : O(2^n)
 const towerOfHanoi = (n, fromRod, toRod, usingRod) => {
   //base case : if there is only one disk
   if (n === 1) {
