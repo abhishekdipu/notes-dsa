@@ -31,5 +31,25 @@ const binarySearch = (arr, target) => {
 };
 
 console.log(binarySearch([-5, 2, 4, 6, 10], 10)); //4
-console.log(binarySearch([-5, 2, 4, 6, 10], 6)); //4
+console.log(binarySearch([-5, 2, 4, 6, 10], 6)); //3
 console.log(binarySearch([-5, 2, 4, 6, 10], 20)); //-1
+
+// Using recursion
+// Big-O : O(log n)
+const binarySearch_recursive = (arr, target) => {
+  return search(arr, target, 0, arr.length - 1);
+};
+
+const search = (arr, target, leftIndex, rightIndex) => {
+  if (leftIndex > rightIndex) return -1;
+  let midIndex = Math.floor((leftIndex + rightIndex) / 2);
+  if (target === arr[midIndex]) {
+    return midIndex;
+  } else if (target < arr[midIndex]) {
+    return search(arr, target, leftIndex, midIndex - 1);
+  } else return search(arr, target, midIndex + 1, rightIndex);
+};
+
+console.log(binarySearch_recursive([-5, 2, 4, 6, 10], 10)); //4
+console.log(binarySearch_recursive([-5, 2, 4, 6, 10], 6)); //3
+console.log(binarySearch_recursive([-5, 2, 4, 6, 10], 20)); //-1
