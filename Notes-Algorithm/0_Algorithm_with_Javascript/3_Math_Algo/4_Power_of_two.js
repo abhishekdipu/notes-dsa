@@ -20,6 +20,17 @@ If remainder is not O in any step, 'n' is not a power of two
 If remainder is 0 and 'n' comes down to 1 eventually, n is a power of two.
 */
 
+// big-O : O(n)
+const isPowerOfTwo_solution2 = (n) => {
+  let power = 1;
+  while (power < n) {
+    power = power * 2;
+  }
+
+  if (power === n) return true;
+  return false;
+};
+
 // big-O : O(log(n)) in each iteration input in getting half
 const isPowerOfTwo = (n) => {
   if (n < 1) return false;
@@ -33,19 +44,28 @@ const isPowerOfTwo = (n) => {
   return true;
 };
 
-const isPowerOfTwo_solution2 = (n) => {
-  let power = 1;
-  while (power < n) {
-    power = power * 2;
-  }
-
-  if (power === n) return true;
-  return false;
-};
-
 console.log(isPowerOfTwo(1)); //true (2^0)
 console.log(isPowerOfTwo(2)); //true (2^1)
 console.log(isPowerOfTwo(5)); //false
 console.log(isPowerOfTwo(16)); //true
 console.log(isPowerOfTwo(64)); //true
 console.log(isPowerOfTwo(65)); //false
+
+/** Using Bitwise operator
+explanations : 
+    in binary a number which can be written as power of 2 always ends with 0 (except 1)
+
+example :
+1 -> 1
+2-> 10
+3 -> 100
+4 -> 1000
+
+In JS Bitwise operator are 1 if both numbers are 1 else 0
+*/
+
+// big-O : O(1)
+const isPowerOfTwo_using_bitwise_operator = (n) => {
+  if (n < 1) return false;
+  return (n & (n - 1)) === 0;
+};
