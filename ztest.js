@@ -1,3 +1,13 @@
+/** Power of Two
+Question : 
+
+explanations : 
+
+sample output :
+
+Solution - Pseudocode
+
+*/
 const person = {
   name: "abhi",
   age: 20,
