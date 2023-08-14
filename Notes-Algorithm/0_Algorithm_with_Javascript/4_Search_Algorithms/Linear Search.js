@@ -15,6 +15,7 @@ Linear search pseudocode
     4. If element not found, return -1
  */
 
+// Big-O = O(n)
 const linearSearch = (arr, target) => {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === target) return i;
