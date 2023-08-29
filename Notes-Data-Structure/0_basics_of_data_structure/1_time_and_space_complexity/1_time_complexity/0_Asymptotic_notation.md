@@ -18,4 +18,6 @@
 
 ## Note :
 
+![](./screenshots/time_complexity.jpg)
+
 ### 1 < log(n) < sqrt(n) < n < n.log(n) < n^2 < n^3 <.....< n^n
