@@ -1,6 +1,6 @@
 # Singly LinkedList
 
-## Time Complexity : O()
+## Time Complexity : Big-O
 
 ### Lookup
 
