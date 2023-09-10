@@ -60,7 +60,9 @@ class LinkedList {
 
     //if first index
     if (index === 0) {
-      //this.head = new Node(data, this.head);
+      // this.head = new Node(data, this.head);
+      // this.size++;
+      // return
       this.insertFirst(data);
       return;
     }
@@ -99,10 +101,8 @@ class LinkedList {
       return "index not found";
     }
     let current = this.head;
-    let count = 0;
-    while (count < index) {
+    for (let i = 0; i < index; i++) {
       current = current.next;
-      count++;
     }
     return current.data;
   }
@@ -157,11 +157,15 @@ class LinkedList {
        */
       let current = this.head;
       let previous;
-      let count = 0;
-      while (count < index) {
+      // let count = 0;
+      // while (count < index) {
+      //   previous = current;
+      //   current = current.next;
+      //   count++;
+      // }
+      for (let i = 0; i < index; i++) {
         previous = current;
         current = current.next;
-        count++;
       }
       previous.next = current.next;
       this.size--;
@@ -205,35 +209,15 @@ class LinkedList {
 
     while (current) {
       nextNode = current.next; // prevNode=null; current=100->200->300; nextNode = 200->300
-      current.next = prevNode; // prevNode=null; current=100->null; nextNode = 200,300
-      prevNode = current; // prevNode=100->null; current=100->null; nextNode = 200,300
-      current = nextNode; // current=200,300
+      current.next = prevNode; // prevNode=null; current=100->null; nextNode = 200->300
+      prevNode = current; // prevNode=100->null; current=100->null; nextNode = 200->300
+      current = nextNode; // current=200->300
     }
     // return prevNode;
     this.head = prevNode;
   }
 
-  //remove duplicate element
-  // removeDuplicate() {
-  //   let current, previous;
-  //   let memo = {};
-  //   current = this.head;
-  //   memo[current.data] = 1;
-
-  //   while (current.next) {
-  //     previous = current;
-  //     current = current.next;
-
-  //     if (current.data in memo) {
-  //       previous.next = current.next;
-  //     } else {
-  //       memo[current.data] = 1;
-  //       // console.log(memo);
-  //       current = previous.next;
-  //     }
-  //   }
-  // }
-
+  // Big-O : O(n^2)
   removeDuplicate() {
     let current = this.head;
     let previous = null;
@@ -249,22 +233,22 @@ class LinkedList {
       current = current.next;
     }
   }
-  removeDuplicate2 = () => {
-    const memo = [];
-    let current = this.head;
-    let previousNode = null;
 
+  // we can make use of Set, as it has lookup of Big-O = O(1), so overall Big-O = O(n)
+  removeDuplicate2() {
+    let current = this.head;
+    let uniqueNodes = new Set();
+    let previous = null;
     while (current) {
-      if (!memo.includes(current.data)) {
-        memo.push(current.data);
-        previousNode = current;
-        current = current.next;
+      if (!uniqueNodes.has(current.data)) {
+        uniqueNodes.add(current.data);
+        previous = current;
       } else {
-        previousNode.next = current.next;
-        current = current.next;
+        previous.next = current.next;
       }
+      current = current.next;
     }
-  };
+  }
 
   toArray() {
     let arr = [];
@@ -292,36 +276,37 @@ class LinkedList {
     }
     console.log(current.data);
   }
-  //getKthFromEnd if size if not known
+
+  //getKthFromEnd if size if not known, here we know only this.head
   /*
-  using 2 pointer approach
-  //Eg LL= 10, 20, 30, 40, 50 ; k=3 => O/P = 30
+  using two-pointer approach
+  Eg LL= 10, 20, 30, 40, 50 ; k=3 => O/P = 30
   Final Target : "second" pointer will at end(50) and "first" pointer would at Kth position (30)
-  For that : set the first and second pointer at distance of "K-1" apart
+  For that : set the leftPointer and rightPointer at distance of "K" apart
   
-  Steps: 1. 
-         2. 
+  Steps: 1. move rightPointer distance k to right
+         2. move both pointer till right reaches the end
 
   */
-  //
-  getKthFromEnd2(k) {
-    // if (k <= 0 || k > this.size) return;
-    if (k <= 0) return;
+  getKthFromEndForUnknownSizeOfLL = (k) => {
+    // here we know only this.head
+    if (this.head == null || k <= 0) return;
 
-    let first = this.head;
-    let second = this.head;
-    for (let i = 0; i < k - 1; i++) {
-      second = second.next;
+    let leftPointer = this.head;
+    let rightPointer = this.head;
 
-      if (!second) return; //check for end (as size in not known)
+    // now move rightPointer k(eg. 2) to right
+    for (let i = 1; i < k; i++) {
+      rightPointer = rightPointer.next;
+      if (!rightPointer) return; //check for end (as size in not known)
     }
 
-    while (second.next) {
-      first = first.next;
-      second = second.next;
+    while (rightPointer.next) {
+      leftPointer = leftPointer.next;
+      rightPointer = rightPointer.next;
     }
-    console.log(first.data);
-  }
+    console.log(leftPointer.data);
+  };
 }
 
 const ll = new LinkedList();
@@ -330,10 +315,11 @@ ll.insertLast(100);
 ll.insertLast(200);
 ll.insertLast(300);
 ll.insertLast(400);
-ll.insertLast(400);
 ll.insertLast(500);
 // ll.insertLast(100);
-// ll.printListData();
-console.log("---------------");
-ll.removeDuplicate();
 ll.printListData();
+console.log("---------------");
+// ll.removeDuplicate2();
+// ll.printListData();
+ll.getKthFromEndForUnknownSizeOfLL(1);
+ll.getKthFromEnd2(1);

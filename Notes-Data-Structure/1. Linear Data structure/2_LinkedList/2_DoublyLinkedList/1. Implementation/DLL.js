@@ -39,7 +39,7 @@ class DoublyLinkedList {
   insertLast(data) {
     let node = new Node(data);
 
-    //if empty, make head
+    //if empty, make head and tail
     if (!this.head) {
       this.head = node;
       this.tail = node;
@@ -52,6 +52,7 @@ class DoublyLinkedList {
     }
     this.size++;
   }
+
   /**********************************************************************************/
   //Insert at index (extra 1 line added from SLL)
   /**********************************************************************************/
@@ -61,26 +62,30 @@ class DoublyLinkedList {
     const node = new Node(data);
 
     if (index == 0) {
-      //insertFirst
+      //insertFirst()
       let temp = this.head;
       this.head = node;
       node.next = temp;
       temp.prev = node;
     } else if (index === this.size) {
-      //insertLast
+      //insertLast()
       let temp = this.tail;
       this.tail = node;
       node.prev = temp;
       temp.next = node;
     } else {
-      let count = 0;
       let current = this.head;
       let previous = null;
 
-      while (count < index) {
+      // let count = 0;
+      // while (count < index) {
+      //   previous = current;
+      //   current = current.next;
+      //   count++;
+      // }
+      for (let i = 0; i < index; i++) {
         previous = current;
         current = current.next;
-        count++;
       }
 
       previous.next = node;
@@ -100,10 +105,8 @@ class DoublyLinkedList {
       return "index not found";
     }
     let current = this.head;
-    let count = 0;
-    while (count < index) {
+    for (let i = 0; i < index; i++) {
       current = current.next;
-      count++;
     }
     return current.data;
   }
@@ -152,15 +155,17 @@ class DoublyLinkedList {
       this.removeLast();
       return;
     }
-
     let current = this.head;
-    let count = 0;
     let previous = null;
 
-    while (count < index) {
+    // while (count < index) {
+    //   previous = current;
+    //   current = current.next;
+    //   count++;
+    // }
+    for (let i = 0; i < index; i++) {
       previous = current;
       current = current.next;
-      count++;
     }
 
     previous.next = current.next;
@@ -214,8 +219,10 @@ dll.insertLast(30);
 dll.insertLast(40);
 dll.insertLast(50);
 
-dll.removeFirst();
-
+// dll.removeFirst();
+// dll.getAt(2);
 dll.printListData();
 console.log("----------------------------");
-dll.printListDataFromTail();
+dll.removeAt1(5);
+dll.printListData();
+// dll.printListDataFromTail();
