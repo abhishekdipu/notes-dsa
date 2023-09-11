@@ -7,7 +7,7 @@
 
 1. Implement the undo feature
 2. Build compiler(eg. syntax checking)
-3. Evaluate expression (eg. 1+2\*3)
+3. Evaluate expression (eg. `1+2*3`)
 4. Build navigation (eg. forward/backward in browser)
 
 ## Operations supported by stack

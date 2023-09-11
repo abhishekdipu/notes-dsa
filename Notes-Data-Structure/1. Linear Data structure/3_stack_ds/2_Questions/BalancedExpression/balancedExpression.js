@@ -11,8 +11,8 @@
 const isBalanced = (str) => {
   let strArr = str.split("");
   let stack = [];
-  let leftBracket = ["(", "[", "{", "<"];
-  let rightBracket = [")", "]", "}", ">"];
+  // let leftBracket = ["(", "[", "{", "<"];
+  // let rightBracket = [")", "]", "}", ">"];
 
   strArr.forEach((item) => {
     if (item == "(") stack.push(item);

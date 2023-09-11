@@ -15,6 +15,7 @@ export class Stack {
   pop() {
     if (this.count == 0) return undefined;
     const poppedItem = this.items[this.count - 1];
+    this.items.length--; // JS way to remove last element (without using built-in pop() method)
     this.count--;
     return poppedItem;
   }
@@ -61,3 +62,4 @@ console.log("size :", stack.size());
 console.log("poped item :", stack.pop());
 console.log("items :", stack.print());
 console.log("size :", stack.size());
+console.log("size :", stack.items);

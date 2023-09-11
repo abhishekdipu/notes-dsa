@@ -2,6 +2,7 @@
 
 - In real world we use queue when we required to process the data in order we received them.
   like Printer, OS (to manager processes), WebServers(to manage incoming request) etc.
+- AWS-SQS(FIFO Mode)
 
 ## Q. What are Queue?
 
