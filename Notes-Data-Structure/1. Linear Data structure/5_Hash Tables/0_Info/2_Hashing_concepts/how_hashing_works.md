@@ -42,29 +42,49 @@ const hashFun = (num) => {
 
 ## 1. Chaining
 
+![](./screenshots/1_how_chaining_looks.png)
+
 - Chaining is way to resolve collision.
 - Chaining uses linked list to store multiple object at same index
 
 ## 2. Open addressing
 
-- here we don't store value in LinkedList, we directly store values in Array cells/slots.
+here we don't store value in LinkedList, we directly store values in Array cells/slots.
 
 ## 2.1 Linear Probing
 
+![](./screenshots/2_1_how_Linear_probing_looks.png)
+
 - Probing means searching
-- In "Linear Probing" if slot for our hashed index is full then we search for next available slot linearly(by incrementing i by 1 and put value there.
-- Linear Probing formula : hash(key) + i
+- In "Linear Probing" if slot for our hashed index is full then we search for next available slot linearly by incrementing i by 1 and put value there.
+- Linear Probing formula :
+
+```js
+hash(key) + i;
+```
+
 - and if all further slots are full then value can't be stored in hash table, it is limitation of Linear Probing.
 - all filled slots are called "cluster"
 
 ## 2.2 Quadratic Probing
 
+![](./screenshots/3_1_how_quadractic_Probing_looks.png)
+
 - Quadratic Probing solve Linear probing cluster problem.
 - here if slot for our hashed index is full then we search for next available slot Quadratically (by incrementing i by i^2) and put value there.
-- Quadratic Probing formula : (hash(key) + i^2
+- Quadratic Probing formula :
+
+  ```js
+  (hash(key) + i) ^ 2;
+  ```
+
 - Problem with Quadratic Probing : it increase search for empty slot quadratically and we'll reach end of hash table sooner and start over again cyclic and may keep of looking at same place and this may result into infinite loop
+- linear vs quadratic probing
+  ![](./screenshots/3_2_linear_vs_quadratic.png)
 
 ## 2.3 Double Hashing
+
+![](./screenshots/4_double%20hashing.png)
 
 - here we hash the object key twice with 2 different hash function
 
@@ -73,4 +93,7 @@ const hashFun = (num) => {
      (here prime is any prime number less than table size)
 
 - Double Hashing function formula:
-  (hash1(key) + i\*hash2(key)) % table_size
+
+  ```js
+  (hash1(key) + i * hash2(key)) % table_size;
+  ```

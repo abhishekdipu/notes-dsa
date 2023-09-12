@@ -10,6 +10,8 @@
 
 ## Hash-Table implementation in diff languages
 
+![](./screenshots/hashTable-in-diff-lang.png)
+
 1. Java - HashMap
 2. JavaScript - Object
 3. Python - Dictionary
