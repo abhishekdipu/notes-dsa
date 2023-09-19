@@ -1,4 +1,4 @@
-import {Tree} from "./BST.js";
+import {Tree} from "./Tree.js";
 
 /**
  BFS(level order traversal) is a 3 steps process
@@ -12,9 +12,7 @@ class Traversal extends Tree {
     if (root == null) return -1;
 
     if (root.leftChild == null && root.rightChild == null) return 0;
-    return (
-      1 + Math.max(this.height(root.leftChild), this.height(root.rightChild))
-    );
+    return 1 + Math.max(this.height(root.leftChild), this.height(root.rightChild));
   }
   //helper methods : print all the nodes at given distance
   printNodesAtDistance(root, distance) {
