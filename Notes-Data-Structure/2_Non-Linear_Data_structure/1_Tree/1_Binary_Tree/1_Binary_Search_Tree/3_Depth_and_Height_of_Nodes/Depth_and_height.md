@@ -1,10 +1,10 @@
 # Depth and height of tree
 
-## Depth :
+## Depth of a node:
 
-- No of edges from "root to node"
+- Number of edges from "root to node"
 
-## Height :
+## Height of a node:
 
 - No of edges(longest path) from "leaf to node"
 
