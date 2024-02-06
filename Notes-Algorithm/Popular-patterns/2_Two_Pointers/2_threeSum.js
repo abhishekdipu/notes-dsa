@@ -43,11 +43,11 @@ const twoSum = (arr, targetSum, leftPointer, triplets) => {
 
       // as we are looking for unique triplets, so need to have unique pairs too for given targetSum
       //move the left pointer up until we get an integer that is different
-      if (leftPointer < rightPointer && arr[leftPointer] === arr[leftPointer - 1]) {
+      while (leftPointer < rightPointer && arr[leftPointer] === arr[leftPointer - 1]) {
         leftPointer++;
       }
       //move the right pointer down until we get an integer that is different
-      if (leftPointer < rightPointer && arr[rightPointer] === arr[rightPointer + 1]) {
+      while (leftPointer < rightPointer && arr[rightPointer] === arr[rightPointer + 1]) {
         rightPointer--;
       }
     } else if (targetSum > currentSum) {
@@ -60,3 +60,38 @@ const twoSum = (arr, targetSum, leftPointer, triplets) => {
 
 console.log(threeSum([-3, 0, 1, 2, -1, 1, -2])); //[[-3, 1, 2], [-2, 0, 2], [-2, 1, 1], [-1, 0, 1]]
 console.log(threeSum([-5, 2, -1, -2, 3])); // [[-5,2,3], [-2,-1,3]]
+console.log(threeSum([-2, 0, 3, -1, 4, 0, 3, 4, 1, 1, 1, -3, -5, 4, 0])); // [[-5,2,3], [-2,-1,3]]
+
+/*
+
+var threeSum = function(nums) {
+  nums.sort((a,b)=>a-b);
+  const triplets = []
+  console.log(nums)
+  for(let i=0; i<nums.length; i++){
+      const target = -nums[i];
+      if(i>0 && nums[i] === nums[i-1]) continue;
+      twoSum(nums, i+1, target, triplets);
+  }
+  return triplets;
+};
+
+const twoSum = (arr, l, target,triplets)=>{
+  let r = arr.length;
+  while(l < r){
+      const sum = arr[l] + arr[r];
+      if(sum === target){
+          triplets.push([-target, arr[l], arr[r]]);
+          l++;
+          r--;
+          if(l<r && arr[l] == arr[l-1]) l++
+          if(l<r && arr[r] == arr[r+1]) r--;
+      }else if(target<sum){
+          r--;
+      }else if(target>sum){
+          l++;
+      }
+  }
+
+}
+*/

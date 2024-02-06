@@ -6,7 +6,7 @@
 
 ## How to identify if given problem can be solved using Sliding Window ?
 
-- there would array or linked list and will be asked to do something in **contiguous** (i.e continues) sub array.
+- there would array or string or linked list and will be asked to do something in **contiguous** (i.e continues) sub array.
 
 ## Some popular problems are :
 

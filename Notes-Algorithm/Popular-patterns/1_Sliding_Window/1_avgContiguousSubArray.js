@@ -8,6 +8,7 @@
  */
 const avgContiguousSubArray_naive = (arr, k) => {
   const resultArr = [];
+  // for given case : o/p = [2, 3, 4] => length 3, so iterate 3 time (5 - (3 - 1))
   for (let i = 0; i < arr.length - (k - 1); i++) {
     let sum = 0;
     for (let j = i; j < i + k; j++) {
