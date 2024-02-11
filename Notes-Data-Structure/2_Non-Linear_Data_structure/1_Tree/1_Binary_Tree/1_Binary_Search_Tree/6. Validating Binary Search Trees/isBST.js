@@ -1,4 +1,4 @@
-import {Tree} from "./Tree.js";
+import {Tree} from './Tree.js';
 
 class IsBST extends Tree {
   //Traversal : preOrder
@@ -7,13 +7,10 @@ class IsBST extends Tree {
     if (root == null) return true;
     if (root.data < min || root.data > max) return false;
 
-    return (
-      this.isBST(root.leftChild, min, root.data - 1) &&
-      this.isBST(root.rightChild, root.data + 1, max)
-    );
+    return this.isBST(root.leftChild, min, root.data - 1) && this.isBST(root.rightChild, root.data + 1, max);
   }
 
-  //to make BST to Binary Tree, swap this leftChild, rightChild
+  //for testing : to change BST to normal Binary Tree, we swap this leftChild, rightChild
   swapRoot(root) {
     let temp = root.leftChild;
     root.leftChild = root.rightChild;
@@ -30,9 +27,14 @@ bst.insert(6);
 bst.insert(8);
 bst.insert(10);
 
-console.log("-------------for bst--------------");
+console.log('-------------for bst--------------');
 console.log(bst.isBST(bst.root));
 
-console.log("-------------for non-bst--------------");
+console.log('-------------for non-bst--------------');
 bst.swapRoot(bst.root);
 console.log(bst.isBST(bst.root));
+
+/*
+LC : https://leetcode.com/problems/validate-binary-search-tree/description/
+
+*/

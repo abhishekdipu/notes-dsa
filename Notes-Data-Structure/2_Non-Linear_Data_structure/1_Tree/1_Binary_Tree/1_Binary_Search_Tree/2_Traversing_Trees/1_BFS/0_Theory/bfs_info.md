@@ -2,4 +2,4 @@
 
 ![](./screenshots/BFS.png)
 
-- BFS is also know as "Level Order Traversal" here we go from 1 level to next level.
+- BFS is also know as "Level Order Traversal" here we go from one level to next level.
