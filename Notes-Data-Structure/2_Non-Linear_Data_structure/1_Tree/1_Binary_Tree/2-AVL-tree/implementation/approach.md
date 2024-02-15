@@ -39,15 +39,15 @@ class AVLTree{
 
 ## check if it's a right heavy tree
 
-```js
-//  right heavy tree example
-1)
+```zsh
+# right heavy tree example
+# Eg. 1
 10
   20
     30
 leftRotation(10)
 
-2)
+# Eg. 2
 10
   30
 20
@@ -59,15 +59,15 @@ leftRotation(10)
 
 ## check if it's a left heavy tree
 
-```js
-//  left heavy tree example
-1)
+```zsh
+#  left heavy tree example
+# Eg. 1
     30
   20
 10
 rightRotation(30)
 
-2)
+# Eg. 2
   30
 10
   20
