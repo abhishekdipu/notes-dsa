@@ -1,6 +1,6 @@
 # Blind 75
 
-- neetcode url : https://neetcode.io/practice
+- my practice website : https://neetcode.io/practice
 
 ## all other popular question list:
 
