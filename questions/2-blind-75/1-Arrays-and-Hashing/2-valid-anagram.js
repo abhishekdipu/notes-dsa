@@ -48,7 +48,7 @@ var isAnagram2 = function (s, t) {
 /* Solution 3 : Using ASCII
 - ASCII : https://www.w3schools.com/charsets/ref_html_ascii.asp
     A-Z : 65-90
-    a-z : 96- 121
+    a-z : 97- 122
 */
 var isAnagram3 = function (s, t) {
   let map = new Array(256).fill(0);
