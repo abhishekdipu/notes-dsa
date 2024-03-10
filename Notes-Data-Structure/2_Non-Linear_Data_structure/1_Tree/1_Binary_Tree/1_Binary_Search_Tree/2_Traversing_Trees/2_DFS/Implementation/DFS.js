@@ -29,7 +29,7 @@ class Traversal extends Tree {
 
     const helper = (input) => {
       if (input == null) return;
-      console.log(input.data);
+      // console.log(input.data);
       nodes.push(input.data);
       helper(input.leftChild);
       helper(input.rightChild);

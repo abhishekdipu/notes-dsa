@@ -21,6 +21,12 @@ Input: nums = [3,3], target = 6
 Output: [0,1]
 */
 
+/*
+Solution approach : 
+1. create map tp store {number : index}
+2. iterate over the array -> get the compliment -> check if its available in map
+*/
+
 /**
  *
  * @param {Array} nums
