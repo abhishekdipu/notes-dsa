@@ -24,7 +24,7 @@ const avgContiguousSubArray_naive = (arr, k) => {
 // console.log(avgContiguousSubArray_naive([1, 2, 3, 4, 5], 3));
 // console.log(avgContiguousSubArray_naive([1, 3, 2, 6, -1, 4, 1, 8, 2], 5)); // [ 2.2, 2.8, 2.4, 3.6, 2.8 ]
 
-const avgContiguousSubArray = (arr, k) => {
+const avgContiguousSubArray1 = (arr, k) => {
   const resultArr = [];
   let windowStart = 0;
   let windowSum = 0;
@@ -38,5 +38,25 @@ const avgContiguousSubArray = (arr, k) => {
   }
   return resultArr;
 };
+
+// my approach : to keep consistent with 2 pointers
+const avgContiguousSubArray = (arr, k) => {
+  let l = 0;
+  let r = 0;
+  const res = [];
+  let sum = 0;
+
+  while (r < arr.length) {
+    sum += arr[r];
+    if (r - l + 1 === k) {
+      res.push(sum / k);
+      sum -= arr[l];
+      l++;
+    }
+    r++;
+  }
+  return res;
+};
+
 console.log(avgContiguousSubArray([1, 2, 3, 4, 5], 3)); //[ 2, 3, 4 ]
 console.log(avgContiguousSubArray([1, 3, 2, 6, -1, 4, 1, 8, 2], 5)); // [ 2.2, 2.8, 2.4, 3.6, 2.8 ]

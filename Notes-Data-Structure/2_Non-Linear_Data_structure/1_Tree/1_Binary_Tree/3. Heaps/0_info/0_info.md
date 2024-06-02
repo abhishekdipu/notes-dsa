@@ -1,23 +1,27 @@
 # Heaps
 
-- heaps are special type of binary tree which are used in shorting and many other graph algorithm
+- Heap is complete Binary tree which satisfy heap property.
+- NB: More accurately it's called binary heap
 
-## What are Heaps?
+## In Detail : What are Heaps?
 
 - Heaps are special type of trees with 2 properties
 
 ### 1. COMPLETE
 
 - It should be COMPLETE tree : means All levels are filled except potentially last level. And level are filled from left to the right.
+  - Complete Binary Tree
+    ![](./screenshots/complete_tree_1.png)
+    ![](./screenshots/complete_tree_2.png)
+  - Not Complete Binary Tree
+    ![](./screenshots/Not-complete_tree_1.png)
+    ![](./screenshots/Not-complete_tree_2.png)
 
 ### 2. HEAP PROPERTY
 
 - The Value of each node should be greater than or equal to it's children
-
-## Definition :
-
-- Heap is complete Binary tree which satisfy heap property.
-- NB: More accurately it's called binary heap
+  ![](./screenshots/heap_prop_1.png)
+  ![](./screenshots/heap_prop_2.png)
 
 # Heap Types :
 
@@ -33,7 +37,7 @@
 
 ## Heaps Application
 
-1. Sorting (HeapSort): used for shoring data
+1. Sorting (HeapSort): used for sorting data
 2. Graph algorithms (shortest path): Use to find shortest path between 2 nodes in graph. (used in GPS)
 3. Priority Queues : used to implement Priority Queues
 4. Finding the Kth smallest/largest value
@@ -50,7 +54,7 @@
 
 1. Inserting the node : O(log n)
    - hight of tree(h) = log n
-   - => TC = O(h)
+   - TC = O(h)
 2. Deleting the node : O(log n)
 3. Maximum Value : O(1)
 

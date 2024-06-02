@@ -1,0 +1,27 @@
+{
+  "hotel": {
+    "_id": "",
+    "name": "",
+    "city": "",
+    "isAvailable": "",
+    "available": {
+      "0": true,
+      "1": true,
+      "2": false
+    },
+    "rooms": [
+      {
+        "bookings": [
+          {
+            "from": "",
+            "to": ""
+          },
+          {
+            "from": "",
+            "to": ""
+          }
+        ]
+      }
+    ]
+  }
+}
