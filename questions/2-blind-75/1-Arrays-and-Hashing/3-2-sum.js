@@ -22,9 +22,10 @@ Output: [0,1]
 */
 
 /*
-Solution approach : 
-1. create map tp store {number : index}
-2. iterate over the array -> get the compliment -> check if its available in map
+* Solution approach : use map and memoize
+  1. create map tp store {number : index}
+  2. iterate over the array -> get the compliment -> check if its available in map
+* TC : O(n)
 */
 
 /**
@@ -33,7 +34,7 @@ Solution approach :
  * @param {Number} target
  * @returns {Array}
  */
-var twoSum = function (nums, target) {
+const twoSum = (nums, target) => {
   let map = new Map();
   for (let i = 0; i < nums.length; i++) {
     let complement = target - nums[i];
