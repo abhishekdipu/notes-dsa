@@ -19,10 +19,15 @@ Output: [0,0,9,0,0]
 */
 
 /**
- * @param {number[]} nums
- * @return {number[]}
+ * Approach 1 : array preprocessing
+ * steps :
+ * 1. calculate prefix and postfix
+ * 2. get result from them
+ *
+ * TC : O(n) => O(n + n + n)
  */
-var productExceptSelf = function (nums) {
+
+const productExceptSelf = (nums) => {
   // const product = nums.reduce((a,c)=>a*c);
   // console.log(product)
   const prefix = []; // [1*1, 1*2, 2*3, 6*4] = [1,2,6,24]
