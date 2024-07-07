@@ -28,3 +28,37 @@ Input: nums = [0,0,0]
 Output: [[0,0,0]]
 Explanation: The only possible triplet sums up to 0.
 */
+
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+const threeSum = (nums) => {
+  nums.sort((a, b) => a - b);
+  const triplets = [];
+  // console.log(nums)
+  for (let i = 0; i < nums.length; i++) {
+    const target = -nums[i];
+    if (i > 0 && nums[i] === nums[i - 1]) continue;
+    twoSum(nums, i + 1, target, triplets);
+  }
+  return triplets;
+};
+
+const twoSum = (arr, l, target, triplets) => {
+  let r = arr.length - 1;
+  while (l < r) {
+    const sum = arr[l] + arr[r];
+    if (sum === target) {
+      triplets.push([-target, arr[l], arr[r]]);
+      l++;
+      r--;
+      while (l < r && arr[l] == arr[l - 1]) l++;
+      while (l < r && arr[r] == arr[r + 1]) r--;
+    } else if (target < sum) {
+      r--;
+    } else if (target > sum) {
+      l++;
+    }
+  }
+};
