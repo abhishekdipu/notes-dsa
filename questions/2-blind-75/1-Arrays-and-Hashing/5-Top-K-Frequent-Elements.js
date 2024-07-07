@@ -1,4 +1,4 @@
-/*
+/* 347. Top K Frequent Elements :: Medium
 https://leetcode.com/problems/top-k-frequent-elements/description/
 
 Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
@@ -50,24 +50,26 @@ const topKFrequent1 = (arr = [], k) => {
   }
   return res;
 };
-console.log('ans 1 : ', topKFrequent1([4, 1, 1, 2, 2, 3], 2));
+// console.log('ans 1 : ', topKFrequent1([4, 1, 1, 2, 2, 3], 2)); // [ '1', '2' ]
 
 /**
  * Approach 2 : heapify
  * steps :
  *  1. get the frequency for each element and add to the max-heap
  *  2. pop the top k from heap
+ *  TC : O(k log(n))
  */
 
 /**
  * Approach 3 : bucket-sort
  * steps :
  *  1.  get the frequency for each element
- *  2. create buckets for same freq elements
- *  3. get last k elements from array end
+ *  2.  create buckets for same freq elements
+ *  3.  get last k elements from array end
  *
  * TC : O(n)
  */
+// input arr = [1, 1, 1, 2, 2, 3]
 const topKFrequent = (arr = [], k) => {
   // 1.  get the frequency for each element
   const freq = {};
@@ -75,7 +77,7 @@ const topKFrequent = (arr = [], k) => {
     freq[num] = freq[num] ? freq[num] + 1 : 1;
   });
 
-  //   console.log({freq});
+  // console.log({freq}); // { freq: { '1': 3, '2': 2, '3': 1 } }
 
   /* 2. create buckets for same freq elements
 
@@ -115,6 +117,6 @@ const topKFrequent = (arr = [], k) => {
     }
   }
 };
-console.log('ans 3 : ', topKFrequent([1, 1, 1, 2, 2, 3], 2));
-console.log('ans 3 : ', topKFrequent([1, 1, 1, 2, 2, 2, 3], 2));
-console.log('ans 3 : ', topKFrequent([4, 1, -1, 2, -1, 2, 3], 2));
+console.log('ans 3 : ', topKFrequent([1, 1, 1, 2, 2, 3], 2)); // [ '1', '2' ]
+console.log('ans 3 : ', topKFrequent([1, 1, 1, 2, 2, 2, 3], 2)); // [ '1', '2' ]
+console.log('ans 3 : ', topKFrequent([4, 1, -1, 2, -1, 2, 3], 2)); // [ '2', '-1' ]
