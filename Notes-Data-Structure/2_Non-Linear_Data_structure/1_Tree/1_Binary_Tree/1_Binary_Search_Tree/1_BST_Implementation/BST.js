@@ -48,16 +48,13 @@ class Tree {
       }
       return root;
     };
-
     this.root = insertHelper(data, this.root);
   }
 
   //check if node is present
   find(data) {
     if (this.root == null) return false;
-
     let current = this.root;
-
     while (current != null) {
       if (data < current.data) {
         current = current.leftChild;

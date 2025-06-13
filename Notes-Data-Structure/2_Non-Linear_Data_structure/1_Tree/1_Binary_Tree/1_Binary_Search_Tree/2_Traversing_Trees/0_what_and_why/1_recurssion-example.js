@@ -1,4 +1,6 @@
-/* # Recursion
+/* 
+# Recursion
+  - we'll be using recursion for tree traversal, so lets recaps recursion .
 
 - Eg. Factorial for a number
 */

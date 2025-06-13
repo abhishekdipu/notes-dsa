@@ -53,7 +53,7 @@ bst.insert(10);
 console.log('traversePreOrder');
 // bst.traversePreOrder(bst.root);
 const ans = bst.traversePreOrderArr(bst.root);
-console.log('ans-->', [...ans]);
+console.log('ans-->', ans);
 
 // console.log('traverseInOrder');
 // bst.traverseInOrder(bst.root);
